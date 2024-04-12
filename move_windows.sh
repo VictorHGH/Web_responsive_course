@@ -8,25 +8,18 @@ open -a "Terminal"
 move_to_second_monitor_linux() {
     # Get the window IDs of the Chrome, Safari, and Terminal windows
     chrome_window_id=$(xdotool search --onlyvisible --class "google-chrome")
-    safari_window_id=$(xdotool search --onlyvisible --class "Safari")
     terminal_window_id=$(xdotool search --onlyvisible --class "Terminal")
 
     # Set the new window size (width x height)
     chrome_new_width=1920
     chrome_new_height=1080
 
-    safari_new_width=960
-    safari_new_height=1080
-
     terminal_new_width=960
     terminal_new_height=1080
 
     # Move the windows to the second monitor
     xdotool windowsize "$chrome_window_id" "$chrome_new_width" "$chrome_new_height"
-    xdotool windowmove "$chrome_window_id" 1920 0  # Adjust the coordinates as needed
-
-    xdotool windowsize "$safari_window_id" "$safari_new_width" "$safari_new_height"
-    xdotool windowmove "$safari_window_id" 960 0  # Adjust the coordinates as needed
+    xdotool windowmove "$chrome_window_id" 960 0  # Adjust the coordinates as needed
 
     xdotool windowsize "$terminal_window_id" "$terminal_new_width" "$terminal_new_height"
     xdotool windowmove "$terminal_window_id" 0 0  # Adjust the coordinates as needed
