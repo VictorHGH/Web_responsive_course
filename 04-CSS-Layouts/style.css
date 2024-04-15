@@ -144,7 +144,7 @@ body {
 } */
 
 li:first-child {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 li:last-child {
