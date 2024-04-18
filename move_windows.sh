@@ -39,15 +39,19 @@ move_to_second_monitor_mac() {
   chrome_new_width=3840
   chrome_new_height=1080
 
-  safari_new_width=1920
+  safari_new_width=5760
   safari_new_height=1080
 
-  terminal_new_width=960
+  terminal_new_width=1920
   terminal_new_height=1080
 
   # Move the window to the second monitor
+  # This specifies the bounds of the window as a rectangle. The format is {left, top, right, bottom}. In this case, 
+  # the left and top coordinates are set to 1920 and 0, respectively, indicating the position of the top-left corner 
+  # of the window on the screen. The right and bottom coordinates are calculated based on the width and height of the 
+  # window ($chrome_new_width and $chrome_new_height variables).
   osascript -e "tell application \"Google Chrome\" to set bounds of window id $chrome_window_id to {1920, 0, $chrome_new_width, $chrome_new_height}"
-  osascript -e "tell application \"Safari\" to set bounds of window id $safari_window_id to {960, 0, $safari_new_width, $safari_new_height}"
+  osascript -e "tell application \"Safari\" to set bounds of window id $safari_window_id to {3840, 0, $safari_new_width, $safari_new_height}"
   osascript -e "tell application \"Terminal\" to set bounds of window id $terminal_window_id to {0, 0, $terminal_new_width, $terminal_new_height}"
 }
 
