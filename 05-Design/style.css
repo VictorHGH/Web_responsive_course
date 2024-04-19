@@ -68,19 +68,16 @@ img {
 }
 
 /* FEATURES */
-.features-icon {
-}
+.features-icon {}
 
 .features-title {
   margin-bottom: 16px;
 }
 
-.features-text {
-}
+.features-text {}
 
 /* TESTIMONIAL */
-.testimonial-section {
-}
+.testimonial-section {}
 
 .testimonial-box {
   grid-column: 2 / -1;
@@ -121,8 +118,7 @@ h3 {
   margin-bottom: 0;
 }
 
-.chair-icon {
-}
+.chair-icon {}
 
 .chair-price {
   display: flex;
