@@ -36,10 +36,10 @@ move_to_second_monitor_mac() {
   terminal_window_id=$(osascript -e 'tell application "Terminal" to id of window 1')
 
   # Set the new window size (width x height)
-  chrome_new_width=3840
+  chrome_new_width=5760
   chrome_new_height=1080
 
-  safari_new_width=5760
+  safari_new_width=3840
   safari_new_height=1080
 
   terminal_new_width=1920
@@ -50,8 +50,8 @@ move_to_second_monitor_mac() {
   # the left and top coordinates are set to 1920 and 0, respectively, indicating the position of the top-left corner 
   # of the window on the screen. The right and bottom coordinates are calculated based on the width and height of the 
   # window ($chrome_new_width and $chrome_new_height variables).
-  osascript -e "tell application \"Google Chrome\" to set bounds of window id $chrome_window_id to {1920, 0, $chrome_new_width, $chrome_new_height}"
-  osascript -e "tell application \"Safari\" to set bounds of window id $safari_window_id to {3840, 0, $safari_new_width, $safari_new_height}"
+  osascript -e "tell application \"Google Chrome\" to set bounds of window id $chrome_window_id to {3840, 0, $chrome_new_width, $chrome_new_height}"
+  osascript -e "tell application \"Safari\" to set bounds of window id $safari_window_id to {1920, 0, $safari_new_width, $safari_new_height}"
   osascript -e "tell application \"Terminal\" to set bounds of window id $terminal_window_id to {0, 0, $terminal_new_width, $terminal_new_height}"
 }
 
