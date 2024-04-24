@@ -2,32 +2,38 @@
 
 # Function to move window to second monitor for Linux
 move_to_second_monitor_linux() {
-    
-  flatpak run com.google.Chrome --new-window "http://localhost:5173"
-  
-  # Get the window IDs of the Chrome, Safari, and Terminal windows
-  chrome_window_id=$(xdotool search --onlyvisible --class "google-chrome")
-  terminal_window_id=$(xdotool search --onlyvisible --class "Terminal")
+  # Open two instances of Google Chrome with new windows and different URLs
+  flatpak run com.google.Chrome --new-window "http://localhost:5173" &
+  sleep 1
+  flatpak run com.google.Chrome --new-window "https://www.udemy.com/" &
+  sleep 1
 
-  # Set the new window size (width x height)
-  chrome_new_width=960
-  chrome_new_height=1080
+  # Get the window IDs of the Chrome windows and Terminal
+  chrome_wmctrl_ids=($(wmctrl -l | grep "Google Chrome" | awk '{print $1}'))
+  chrome_xdotools_ids=($(xdotool search --class --onlyvisible "google-chrome"))
+  terminal_wmctrl_id=$(wmctrl -l | grep "Terminal" | awk '{print $1}')
+  terminal_xdotools_id=$(xdotool search --onlyvisible --class "Terminal")
 
-  terminal_new_width=960
-  terminal_new_height=1080
+  # Change window sizes with xdotool
+  # xdotool windowsize <window_id> <width> <height>
+  xdotool windowsize "$chrome_xdotools_ids[1]" 960 1080
+  xdotool windowsize "$chrome_xdotools_ids[2]" 1920 1080
+  xdotool windowsize "$terminal_xdotools_id" 960 1080
 
-  # Move the windows to the second monitor
-  xdotool windowsize "$chrome_window_id" "$chrome_new_width" "$chrome_new_height"
-  xdotool windowmove "$chrome_window_id" 960 0  # Adjust the coordinates as needed
+  # Move the first Chrome window to the second half of the first monitor (960 px from the left)
+  wmctrl -i -r "${chrome_wmctrl_ids[1]}" -e "0,960,0,-1,-1"
 
-  xdotool windowsize "$terminal_window_id" "$terminal_new_width" "$terminal_new_height"
-  xdotool windowmove "$terminal_window_id" 0 0  # Adjust the coordinates as needed
+  # Move the second Chrome window to full size of the second monitor (1920 px from the left)
+  wmctrl -i -r "${chrome_wmctrl_ids[2]}" -e "0,1920,0,-1,-1"
+
+  # Move/resize the Terminal window to the first half of the first monitor
+  wmctrl -i -r "$terminal_wmctrl_id" -e "0,0,0,-1,-1"
 }
 
 # Function to move window to second monitor for macOS
 move_to_second_monitor_mac() {
-  open -a "Google Chrome" --args --new-window "https://www.google.com"
-  open -a "Safari" --args --new-window "https://www.google.com"
+  open -a "Google Chrome" --args --new-window "https://www.udemy.com/"
+  open -a "Safari" --args --new-window "http://localhost:5173"
   open -a "Terminal"
 
   # Get the window ID of the Chrome window
