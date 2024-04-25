@@ -1,35 +1,25 @@
 #!/bin/bash
 
 # Function to move window to second monitor for Linux
-move_to_second_monitor_linux() {
+ move_to_second_monitor_linux() {
   # Open two instances of Google Chrome with new windows and different URLs
-  flatpak run com.google.Chrome --new-window "http://localhost:5173" &
+  flatpak run com.google.Chrome "http://localhost:5173" &
   sleep 1
   flatpak run com.google.Chrome --new-window "https://www.udemy.com/" &
   sleep 1
 
   # Get the window IDs of the Chrome windows and Terminal
   chrome_wmctrl_ids=($(wmctrl -l | grep "Google Chrome" | awk '{print $1}'))
-  terminal_wmctrl_id=$(wmctrl -l | grep "Terminal" | awk '{print $1}')
-  
-  # Get the xdotools IDs of the Chrome windows and Terminal
-  chrome_xdotools_ids=($(xdotool search --class --onlyvisible "google-chrome"))
-  terminal_xdotools_id=$(xdotool search --onlyvisible --class "Terminal")
+  terminal_wmctrl_id=$(wmctrl -l | grep "Editor" | awk '{print $1}')
 
-  # Change window sizes with xdotool
-  # xdotool windowsize <window_id> <width> <height>
-  xdotool windowsize "$chrome_xdotools_ids[1]" 960 1080
-  xdotool windowsize "$chrome_xdotools_ids[2]" 1920 1080
-  xdotool windowsize "$terminal_xdotools_id" 960 1080
+  # Move and resize the first Chrome window to the second half of the first monitor (960 px from the left)
+  wmctrl -i -r "${chrome_wmctrl_ids[0]}" -e "0,940,-20,995,1125"
 
-  # Move the first Chrome window to the second half of the first monitor (960 px from the left)
-  wmctrl -i -r "${chrome_wmctrl_ids[1]}" -e "0,960,0,-1,-1"
+  # Move and resize the second Chrome window to full size of the second monitor (1920 px from the left)
+  wmctrl -i -r "${chrome_wmctrl_ids[1]}" -e "0,1950,-20,1950,1125"
 
-  # Move the second Chrome window to full size of the second monitor (1920 px from the left)
-  wmctrl -i -r "${chrome_wmctrl_ids[2]}" -e "0,1920,0,-1,-1"
-
-  # Move/resize the Terminal window to the first half of the first monitor
-  wmctrl -i -r "$terminal_wmctrl_id" -e "0,0,0,-1,-1"
+  # Move and resize the Terminal window to the first half of the first monitor
+  wmctrl -i -r "$terminal_wmctrl_id" -e "0,0,0,960,1100"
 }
 
 # Function to move window to second monitor for macOS
