@@ -44,59 +44,105 @@ GRAY: #343a40
 
     .container {
       width: 800px;
-      display: flex;
+      display: grid;
+      grid-template-columns: repeat(10, 38px);
       justify-content: center;
-      align-content: center;
+      place-items: center;
     }
 
     .btn {
-      background: #fff;
-      border: 1px solid #087f5b;
-      height: 40px;
-      width: 40px;
-      border-radius: 50%;
-      position: absolute;
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
       display: flex;
       align-items: center;
       justify-content: center;
       cursor: pointer;
+      border: none;
+
+      .btn--icon {
+        width: 35px;
+        height: 35px;
+        stroke: #087f5b;
+        border: 1px solid #087f5b;
+        padding: 8px;
+        border-radius: 50%;
+
+        &:hover {
+          stroke: #fff;
+          background-color: #087f5b;
+        }
+      }
     }
 
-    .btn:hover {
+    .selected {
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       background: #087f5b;
+      border-radius: 50%;
+      /* padding: 8px; */
+      color: #fff;
     }
 
-    .btn-icon {
-      width: 24px;
-      height: 24px;
-      stroke: #087f5b;
-    }
-
-    .btn-icon:hover {
-      stroke: #fff;
-      font-weight: 700;
+    .number:hover {
+      width: 35px;
+      height: 35px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #087f5b;
+      border-radius: 50%;
+      padding: 8px;
+      color: #fff;
     }
   </style>
 
 </head>
 
 <body>
+
   <div class="container">
+
     <button class="btn btn--left">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-        class="btn-icon">
+        class="btn--icon">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
       </svg>
     </button>
 
+    <div class="number">1</div>
+    <div class="number">2</div>
+    <div class="number selected">3</div>
+    <div class="number">4</div>
+    <div class="number">5</div>
+    <div class="number">6</div>
+    <div class="number">...</div>
+    <div class="number">23</div>
+
     <button class="btn btn--right">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-        class="btn-icon">
+        class="btn--icon">
         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
       </svg>
     </button>
+
   </div>
+
 </body>
+
+<script>
+  const items = document.querySelectorAll('.number');
+
+  items.forEach(item => {
+    item.addEventListener('click', () => {
+      if (item.classList.contains('selected')) {
+        item.classList.remove('selected');
+      } else {
+        items.forEach(el => el.classList.remove('selected'));
+        item.classList.add('selected');
+      }
+    });
+  });
+</script>
 
 </html>
