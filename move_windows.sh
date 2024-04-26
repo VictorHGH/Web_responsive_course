@@ -27,6 +27,7 @@ move_to_second_monitor_mac() {
   open -a "Google Chrome" "https://www.udemy.com/"
   open -a "Safari" "http://localhost:5173"
   open -a "Terminal"
+  sleep 1
 
   # Get the window ID of the Chrome window
   chrome_window_id=$(osascript -e 'tell application "Google Chrome" to id of window 1')
