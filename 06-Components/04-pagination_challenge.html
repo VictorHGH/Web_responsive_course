@@ -43,57 +43,55 @@ GRAY: #343a40
     }
 
     .container {
-      width: 800px;
-      display: grid;
-      grid-template-columns: repeat(10, 38px);
-      justify-content: center;
-      place-items: center;
-    }
-
-    .btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      cursor: pointer;
-      border: none;
+      gap: 10px;
+    }
 
-      .btn--icon {
-        width: 35px;
-        height: 35px;
-        stroke: #087f5b;
-        border: 1px solid #087f5b;
-        padding: 8px;
-        border-radius: 50%;
+    .btn--icon {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #087f5b;
+      border-radius: 50%;
+      background-color: none;
+      padding: 7px;
+      stroke: #087f5b;
 
-        &:hover {
-          stroke: #fff;
-          background-color: #087f5b;
-        }
+      &:hover {
+        background-color: #087f5b;
+        stroke: #fff;
       }
     }
 
-    .selected {
+    .number {
       width: 30px;
       height: 30px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #087f5b;
-      border-radius: 50%;
-      /* padding: 8px; */
-      color: #fff;
+      cursor: pointer;
+      display: grid;
+      place-items: center;
+
+      &:hover {
+        background-color: #087f5b;
+        stroke: #fff;
+        background-color: #087f5b;
+        color: #fff;
+        border-radius: 50%;
+      }
+
+      &.selected {
+        background-color: #087f5b;
+        color: #fff;
+        border-radius: 50%;
+      }
     }
 
-    .number:hover {
-      width: 35px;
-      height: 35px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #087f5b;
-      border-radius: 50%;
-      padding: 8px;
-      color: #fff;
+    .span {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      color: #868e96;
     }
   </style>
 
@@ -103,28 +101,28 @@ GRAY: #343a40
 
   <div class="container">
 
-    <button class="btn btn--left">
+    <a href="#">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="btn--icon">
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
       </svg>
-    </button>
+    </a>
 
-    <div class="number">1</div>
-    <div class="number">2</div>
-    <div class="number selected">3</div>
-    <div class="number">4</div>
-    <div class="number">5</div>
-    <div class="number">6</div>
-    <div class="number">...</div>
-    <div class="number">23</div>
+    <a class="number">1</a>
+    <a class="number">2</a>
+    <a class="number selected">3</a>
+    <a class="number">4</a>
+    <a class="number">5</a>
+    <a class="number">6</a>
+    <span class="span">...</span>
+    <a class="number">23</a>
 
-    <button class="btn btn--right">
+    <a href="#">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="btn--icon">
         <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
       </svg>
-    </button>
+    </a>
 
   </div>
 
