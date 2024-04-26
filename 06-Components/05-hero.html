@@ -33,6 +33,17 @@
     header {
       background-color: orangered;
       height: 100dvh;
+      position: relative;
+    }
+
+    .header-container {
+      width: 100%;
+      max-width: 1200px;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      background-color: violet;
     }
 
     nav {
@@ -41,6 +52,11 @@
       display: flex;
       justify-content: space-between;
       background-color: green;
+    }
+
+    .header-container--inner {
+      width: 50%;
+      background-color: blue;
     }
 
     h1 {
@@ -85,13 +101,15 @@
       <div>Logo</div>
       <div>Navigation</div>
     </nav>
-    <div class="container">
-      <h1>A healty meal delivered to you door, every single day</h1>
-      <p>
-        The smart 365-days-per-year food subscription that will make you eat healty again.
-        Toilored to you personal tastes and nutritional needs.
-      </p>
-      <a href="#" class="btn">Start eating well</a>
+    <div class="header-container">
+      <div class="header-container--inner">
+        <h1>A healty meal delivered to you door, every single day</h1>
+        <p>
+          The smart 365-days-per-year food subscription that will make you eat healty again.
+          Toilored to you personal tastes and nutritional needs.
+        </p>
+        <a href="#" class="btn">Start eating well</a>
+      </div>
     </div>
   </header>
 
