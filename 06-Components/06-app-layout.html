@@ -19,34 +19,41 @@
     font-family: sans-serif;
     color: #343a40;
     font-size: 24px;
+    text-align: center;
+    font-weight: bold;
+
     display: grid;
     grid-template-columns: 80px 400px 1fr 250px;
     grid-template-rows: 80px 1fr;
-    grid-template-areas:
-      "nav menu menu menu"
-      "nav section main aside";
     height: 100dvh;
+  }
+
+  nav,
+  menu,
+  section,
+  main,
+  aside {
+    padding-top: 24px;
   }
 
   nav {
     background-color: #343a40;
-    grid-area: nav;
+    color: #fff;
+    grid-row: 1 / -1;
   }
 
   menu {
     background-color: #7048e8;
     color: #fff;
-    grid-area: menu;
+    grid-column: 2 / -1;
   }
 
   section {
     background-color: #e9ecef;
-    grid-area: section;
   }
 
   aside {
     background-color: #e9ecef;
-    grid-area: aside;
   }
 </style>
 
