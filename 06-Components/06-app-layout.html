@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>App laytou</title>
+  <link href="css/style.css" rel="stylesheet">
+</head>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: sans-serif;
+    color: #343a40;
+    font-size: 24px;
+    display: grid;
+    grid-template-columns: 80px 400px 1fr 250px;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas:
+      "nav menu menu menu"
+      "nav section main aside";
+    height: 100dvh;
+  }
+
+  nav {
+    background-color: #343a40;
+    grid-area: nav;
+  }
+
+  menu {
+    background-color: #7048e8;
+    color: #fff;
+    grid-area: menu;
+  }
+
+  section {
+    background-color: #e9ecef;
+    grid-area: section;
+  }
+
+  aside {
+    background-color: #e9ecef;
+    grid-area: aside;
+  }
+</style>
+
+<body>
+  <nav>Nav</nav>
+  <menu>Menu</menu>
+  <section>Inbox</section>
+  <main>Email view</main>
+  <aside>Additional info</aside>
+</body>
+
+</html>
