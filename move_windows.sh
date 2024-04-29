@@ -4,9 +4,9 @@
  move_to_second_monitor_linux() {
   # Open two instances of Google Chrome with new windows and different URLs
   flatpak run com.google.Chrome "http://localhost:5173" &
-  sleep 1
+  sleep 2
   flatpak run com.google.Chrome --new-window "https://www.udemy.com/" &
-  sleep 1
+  sleep 2
 
   # Get the window IDs of the Chrome windows and Terminal
   chrome_wmctrl_ids=($(wmctrl -l | grep "Google Chrome" | awk '{print $1}'))
