@@ -4,13 +4,14 @@
  move_to_second_monitor_linux() {
   # Open two instances of Google Chrome with new windows and different URLs
   flatpak run com.google.Chrome "http://localhost:5173" &
-  sleep 2
+  sleep 1
   flatpak run com.google.Chrome --new-window "https://www.udemy.com/" &
-  sleep 2
+  sleep 1
 
   # Get the window IDs of the Chrome windows and Terminal
   chrome_wmctrl_ids=($(wmctrl -l | grep "Google Chrome" | awk '{print $1}'))
   terminal_wmctrl_id=$(wmctrl -l | grep "Editor" | awk '{print $1}')
+  sleep 1
 
   # Move and resize the first Chrome window to the second half of the first monitor (960 px from the left)
   wmctrl -i -r "${chrome_wmctrl_ids[0]}" -e "0,940,-20,995,1125"
