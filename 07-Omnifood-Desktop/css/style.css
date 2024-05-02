@@ -49,13 +49,3 @@ body {
   font-weight: 400;
   color: #555;
 }
-
-.test {
-  background-color: red;
-  /* width: 1000px; */
-  /* max-width: 1000px; */
-  max-width: 50rem;
-  color: #fff;
-  padding: 4rem;
-  font-size: 2rem;
-}
