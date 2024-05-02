@@ -40,6 +40,7 @@ html {
 
   /* Percentage of user's browser font-size setting */
   font-size: 62.5%;
+  /* 1rem = 10px */
 }
 
 body {
