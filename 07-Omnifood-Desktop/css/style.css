@@ -66,103 +66,6 @@ body {
 }
 
 /***************************/
-/* GENERAL REUSABLE COMPONENTS */
-/***************************/
-
-.grid {
-  display: grid;
-  gap: 9.6rem;
-}
-
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.grid--4-cols {
-  grid-template-columns: repeat(4, 1fr);
-}
-
-.heading-primary,
-.heading-secondary,
-.subheading {
-  font-weight: 700;
-  color: #333;
-  letter-spacing: -0.5px;
-}
-
-.heading-primary {
-  font-size: 5.2rem;
-  line-height: 1.05;
-  text-wrap: balance;
-  margin-bottom: 3.2rem;
-}
-
-.heading-secondary {
-  font-size: 4.4rem;
-  line-height: 1.2;
-  margin-bottom: 9.6rem;
-}
-
-.subheading {
-  display: block;
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #cf711f;
-  text-transform: uppercase;
-  margin-bottom: 1.6rem;
-  letter-spacing: 0.75px;
-}
-
-.btn:link,
-.btn:visited {
-  display: inline-block;
-  font-size: 2rem;
-  font-weight: 600;
-  text-decoration: none;
-  padding: 1.6rem 3.2rem;
-  border-radius: .9rem;
-}
-
-.btn--full:link,
-.btn--full:visited {
-  background-color: #e67e22;
-  color: #fff;
-  transition: all 0.3s ease-in-out;
-}
-
-.btn--full:hover,
-.btn--full:hover {
-  background-color: #cf711f;
-}
-
-.btn--outline:link,
-.btn--outline:visited {
-  background-color: #fff;
-  color: #555;
-}
-
-.btn--outline:hover,
-.btn--outline:hover {
-  background-color: #fdf2e9;
-  /* border: 3px solid #fff; */
-  box-shadow: inset 0 0 0 3px #fff;
-}
-
-.margin-right-sm {
-  margin-right: 1.6rem !important;
-}
-
-.container {
-  max-width: 120rem;
-  margin: 0 auto;
-  padding: 0 3.2rem;
-}
-
-/***************************/
 /* HEADER */
 /***************************/
 
@@ -293,6 +196,24 @@ body {
   padding: 9.6rem 0;
 }
 
+.step-number {
+  font-size: 8.6rem;
+  font-weight: 600;
+  color: #bbb;
+  margin-bottom: 1.2rem;
+}
+
+.step-description {
+  font-size: 1.8rem;
+  line-height: 1.8;
+}
+
+.step-img-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .step-img {
-  width: 50%;
+  width: 35%;
 }
