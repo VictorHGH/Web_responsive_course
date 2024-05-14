@@ -76,7 +76,7 @@
 .btn--full:visited {
   background-color: #e67e22;
   color: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: all 0.3s;
 }
 
 .btn--full:hover,
