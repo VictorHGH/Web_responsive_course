@@ -5,7 +5,7 @@
   # Open two instances of Google Chrome with new windows and different URLs
   flatpak run com.google.Chrome "http://localhost:5173" &
   sleep 2
-  flatpak run com.google.Chrome --new-window "https://www.udemy.com/" &
+  flatpak run com.google.Chrome --new-window "https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/learn/" &
   sleep 2
 
   # Get the window IDs of the Chrome windows and Terminal
@@ -25,7 +25,7 @@
 
 # Function to move window to second monitor for macOS
 move_to_second_monitor_mac() {
-  open -a "Google Chrome" "https://www.udemy.com/"
+  open -a "Google Chrome" "https://www.udemy.com/course/design-and-develop-a-killer-website-with-html5-and-css3/learn/"
   open -a "Safari" "http://localhost:5173"
   open -a "Terminal"
   sleep 1
