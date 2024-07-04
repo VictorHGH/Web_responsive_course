@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<input type="text" placeholder="John Smith">
+</input>
 
 <head>
 	<meta charset="UTF-8">
@@ -360,7 +360,7 @@
 				</h2>
 			</div>
 
-			<div class="container grid grid--2-cols">
+			<div class="container grid grid--2-cols margin-bottom-md">
 				<div class="pricing-plan pricing-plan--starter">
 					<header class="plan-header">
 						<p class="plan-name">Starter</p>
@@ -420,6 +420,12 @@
 				</div>
 			</div>
 
+			<div class="container grid">
+				<aside class="plan-details">
+					Prices include all applicable taxes. Users can cancel at any time.
+				</aside>
+			</div>
+
 			<div class="container grid grid--4-cols">
 				<div class="feature">
 					<ion-icon class="feature-icon" name="infinite-outline"></ion-icon>
@@ -428,12 +434,73 @@
 						Our subscriptions cover 365 days per year, even including major holidays.
 					</p>
 				</div>
-				<div class="feature">Feature 2</div>
-				<div class="feature">Feature 3</div>
-				<div class="feature">Feature 4</div>
+
+				<div class="feature">
+					<ion-icon class="feature-icon" name="nutrition-outline"></ion-icon>
+					<p class="feature-title">Local and organic</p>
+					<p class="feature-text">
+						Our cooks only use local, fresh, and organic products to prepare your meals.
+					</p>
+				</div>
+
+				<div class="feature">
+					<ion-icon class="feature-icon" name="leaf-outline"></ion-icon>
+					<p class="feature-title">No waste</p>
+					<p class="feature-text">
+						All our partners only use reusable containers to package all your meals.
+					</p>
+				</div>
+
+				<div class="feature">
+					<ion-icon class="feature-icon" name="pause-outline"></ion-icon>
+					<p class="feature-title">Pause anytime</p>
+					<p class="feature-text">
+						Going on vacation? Just pause your subscription, and we refund unused days.
+					</p>
+				</div>
 			</div>
 		</section>
 
+		<section class="section-cta">
+			<div class="container">
+				<div class="cta">
+					<div class="cta-text-box">
+						<h2 class="heading-secondary">Get your first meal for free!</h2>
+						<p class="cta-text">
+							Healthy, tasty and hassle-free meals are waiting for you.
+							Start eating well today. You can cancel or pause anytime.
+							And the first meal is on us!
+						</p>
+						<form action="#" class="cta-form">
+							<div>
+								<label for="full-name">Full name:</label>
+								<input id="full-name" type="text" placeholder="John Smith" required>
+							</div>
+
+							<div>
+								<label for="email">Your email:</label>
+								<input id="email" type="email" placeholder="your@email.com" required>
+							</div>
+
+							<label>
+								Where did your hear from us?
+								<select required>
+									<option value="">Please choose one option:</option>
+									<option value="friends">Friends and family</option>
+									<option value="youtube">YouTube video</option>
+									<option value="podcast">Podcast</option>
+									<option value="facebook add">Facebook add</option>
+									<option value="others">Others</option>
+								</select>
+							</label>
+
+							<button class="btn">Sign up now</button>
+						</form>
+					</div>
+					<div class="cta-img-box" role="img" aria-label="Woman enjoying food"></div>
+				</div>
+			</div>
+		</section>
 	</main>
 </body>
 
