@@ -1,0 +1,15 @@
+# /home/victorhgh/.config/tmuxinator/Responsive.yml
+
+name: Responsive
+root: ~/Documents/programacion_2.0/responsiveUdemy/
+
+windows:
+  - Editor:
+      layout: 4ab8,179x55,0,0[179x47,0,0,0,179x7,0,48,1]
+      # Synchronize all panes of this window, can be enabled before or after the pane commands run.
+      # 'before' represents legacy functionality and will be deprecated in a future release, in favour of 'after'
+      # synchronize: after
+      panes:
+        - vic
+        - bash ./move_windows.sh ; pnpm run dev
+
